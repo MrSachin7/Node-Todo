@@ -1,0 +1,87 @@
+<html>
+<%- include('../partials/head.ejs') %>
+<body>
+
+<div class="container">
+    <div class="switcher">
+        <div class="incomplete">
+            <p> TO BE DONE</p>
+        </div>
+
+        <div class="complete">
+            <p> COMPLETED</p>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <form class="create-todo " action="/todos" method="post">
+            <div class="inputs">
+                <input type="text" id="title" name="title" placeholder="title" required>
+                <input type="text" id="desc" name="description" placeholder="description" required>
+                <input type="date" id="deadline" name="deadline" placeholder="deadline" required>
+                <div class="icon-contain">
+                    <button class="create-btn"> Create</button>
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+
+    <% if (todosToShow.length <= 0) { %>
+        <div class="content-container">
+            <div class="content">
+                <div class="content-info">
+                    <p class="title">
+                        No todos pending
+                    </p>
+                    <p class="description">
+                        Add todos to see here
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    <% } else{ %>
+
+        <% todosToShow.forEach( todo =>{ %>
+
+            <div class="content-container">
+                <div class="content">
+                    <div class="content-info">
+                        <p class="title">
+                        <%= todo.title%>
+                        </p>
+                        <p class="description">
+                            <%= todo.description%>
+                        </p>
+                    </div>
+                    <div class="content-action">
+                        <p> By <%= todo.deadline.toLocaleDateString()%>></p>
+                        <button class="complete-btn">Complete</button>
+                    </div>
+                </div>
+            </div>
+
+        <% }) %>
+    <% } %>
+
+
+
+
+    </div>
+
+<script>
+    let completed = document.querySelector('.complete');
+    completed.addEventListener('click', ()=>{
+        window.location.href = '/todos/complete';
+    });
+
+    let incomplete = document.querySelector('.incomplete');
+    incomplete.addEventListener('click', ()=>{
+        window.location.href = '/todos';
+    });
+
+</script>
+</body>
+</html>

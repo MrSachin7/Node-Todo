@@ -1,0 +1,94 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Todo</title>
+    <link rel="stylesheet" href="../../public/styles.css">
+</head>
+<body>
+
+
+<div class="container">
+    <div class="switcher">
+        <div class="incomplete">
+            <p> TO BE DONE</p>
+        </div>
+
+        <div class="complete">
+            <p> COMPLETED</p>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <form class="create-todo " action="/">
+            <div class="inputs">
+                <input type="text" id="title" name="title" placeholder="title" required>
+                <input type="text" id="desc" name="deadline" placeholder="description" required>
+                <input type="date" id="deadline" name="deadline" placeholder="deadline" required>
+                <div class="icon-contain">
+                    <button class="create-btn"> Create </button>
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+
+<!--    <div class="content-container">-->
+<!--        <div class="content">-->
+<!--            <div class="content-info">-->
+<!--                <p class="title">-->
+<!--                    No todos pending-->
+<!--                </p>-->
+<!--                <p class="description">-->
+<!--                    Add todos to see here-->
+<!--                </p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+    <div class="content-container">
+        <div class="content">
+            <div class="content-info">
+                <p class="title"> Design Delivery</p>
+            </div>
+            <div class="content-action">
+                <p> By thursday</p>
+                <button class="complete-btn">Complete</button>
+
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="content-info">
+                <p class="title"> Fix animation issue</p>
+
+            </div>
+            <div class="content-action">
+                <p> By thursday</p>
+                <button class="complete-btn">Complete</button>
+            </div>
+        </div>
+        <div class="content">
+            <div class="content-info">
+                <p class="title"> Take the Design forum</p>
+                <p class="description">
+                    Convention and Exhibition Center
+                </p>
+
+            </div>
+            <div class="content-action">
+                <p> By thursday</p>
+                <button class="complete-btn">Complete</button>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>
+</body>
+</html>
